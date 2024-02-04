@@ -13,6 +13,7 @@ namespace PLX {
 
         // Overridden functions --------------------------------------------
 
+        Object* eval(Evaluator* etor) override;
         TypeId typeId() const override;
 
     private:
