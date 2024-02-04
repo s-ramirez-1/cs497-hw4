@@ -95,7 +95,7 @@ namespace PLX {
         EXPECT_TRUE(q2->equals(q1));
     }
 
-    TEST_F(Queue_Test, Eval_Evaluator) {
+    TEST_F(Queue_Test, Eval) {
         Identifier* x = Identifier::create("x");
         Identifier* y = Identifier::create("y");
         Identifier* z = Identifier::create("z");

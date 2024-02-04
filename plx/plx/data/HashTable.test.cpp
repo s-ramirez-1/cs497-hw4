@@ -79,7 +79,7 @@ namespace PLX {
         EXPECT_TRUE(hash2->equals(hash1));
     }
 
-    TEST_F(HashTable_Test, Eval_Evaluator) {
+    TEST_F(HashTable_Test, Eval) {
         // bind some names to values
         Identifier* x = Identifier::create("x");
         Identifier* y = Identifier::create("y");
