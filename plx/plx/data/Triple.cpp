@@ -41,6 +41,18 @@ namespace PLX {
         return _key->equals(othertriple->_key) && _value->equals(othertriple->_value);
     }
 
+    Object* Triple::eval(Evaluator* etor) {
+        if (isEmpty()) {
+            return this;
+        }
+        Object* keyVal = etor->evalExpr(_key);
+        Object* valueVal = etor->evalExpr(_value);
+        Object* nextValObj = etor->evalExpr(_next);
+        assert(nextValObj->isA(TypeId::D_TRIPLE));
+        Triple* nextVal = static_cast<Triple*>(nextValObj);
+        return new Triple(keyVal, valueVal, nextVal);
+    }
+
     bool Triple::isEmpty() const {
         return this == GLOBALS->EmptyTriple();
     }

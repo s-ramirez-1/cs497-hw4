@@ -22,6 +22,11 @@ namespace PLX {
         return ostream;
     }
 
+    std::ostream& operator<<(std::ostream& ostream, const PLX::Object& object) {
+        object.showOn(ostream);
+        return ostream;
+    }
+
     bool Object::operator==(const Object& rhs) const {
         return this->equals(&rhs);
     }

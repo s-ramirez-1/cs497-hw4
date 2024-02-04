@@ -54,7 +54,7 @@ namespace PLX {
         EXPECT_FALSE(list1->equals(list3));
     }
 
-    TEST_F(List_Test, Eval_Evaluator) {
+    TEST_F(List_Test, Eval) {
         Identifier* x = Identifier::create("x");
         Identifier* y = Identifier::create("y");
         Integer* i100 = new Integer(100);

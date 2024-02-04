@@ -71,6 +71,18 @@ namespace PLX {
         return false;
     }
 
+    Object* Queue::eval(Evaluator* etor) {
+        Queue* newQueue = new Queue();
+        List* elems = _head;
+        while (!elems->isEmpty()) {
+            Object* elem = elems->first();
+            Object* elemValue = etor->evalExpr(elem);
+            newQueue->enq(elemValue);
+            elems = elems->restAsList();
+        }
+        return newQueue;
+    }
+
     bool Queue::isEmpty() const {
         return _nElems == 0;
     }

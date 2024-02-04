@@ -58,6 +58,16 @@ namespace PLX {
         return true;
     }
 
+    Object* Array::eval(Evaluator* etor) {
+        Array* newArray = new Array(_elems.size());
+        int n = 0;
+        for (Object* elem : _elems) {
+            Object* value = etor->evalExpr(elem);
+            newArray->set(n++, value);
+        }
+        return newArray;
+    }
+
     bool Array::get(int index, Object*& value) {
         if (index < 0 || index >= static_cast<int>(_elems.size())) {
             value = new Array({

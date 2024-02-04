@@ -46,6 +46,18 @@ namespace PLX {
         return true;
     }
 
+    Object* HashTable::eval(Evaluator* etor) {
+        HashTable* newHashTable = new HashTable();
+        for (auto iter = _map.begin(); iter != _map.end(); iter++) {
+            Object* key = iter->first;
+            Object* value = iter->second;
+            Object* keyVal = etor->evalExpr(key);
+            Object* valueVal = etor->evalExpr(value);
+            newHashTable->put(keyVal, valueVal);
+        }
+        return newHashTable;
+    }
+
     bool HashTable::get(Object* key, Object*& value) const {
         auto iter = _map.find(key);
         if (iter != _map.end()) {

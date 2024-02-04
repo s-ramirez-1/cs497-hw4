@@ -48,7 +48,7 @@ namespace PLX {
         EXPECT_TRUE(triple3->equals(triple2));
     }
 
-    TEST_F(Triple_Test, Eval_Evaluator) {
+    TEST_F(Triple_Test, Eval) {
         Identifier* a = Identifier::create("a");
         Identifier* b = Identifier::create("b");
         Identifier* c = Identifier::create("c");

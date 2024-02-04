@@ -64,6 +64,13 @@ namespace PLX {
         return false;
     }
 
+    Object* List::eval(Evaluator* etor) {
+        if (isEmpty()) {
+            return this;
+        }
+        return new List(etor->evalExpr(_first), etor->evalExpr(_rest));
+    }
+
     Object* List::first() {
         if (isEmpty()) {
             throwException("List", "List is empty", this);

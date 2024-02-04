@@ -55,6 +55,7 @@ namespace PLX {
     // This operator can't be a member function because the first
     // parameter is an ostream and not an Object.
     std::ostream& operator<<(std::ostream& ostream, const PLX::Object* object);
+    std::ostream& operator<<(std::ostream& ostream, const PLX::Object& object);
 
 }
 
