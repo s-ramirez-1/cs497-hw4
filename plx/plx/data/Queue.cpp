@@ -4,6 +4,7 @@
 #include <plx/data/Array.hpp>
 #include <plx/data/List.hpp>
 #include <plx/data/Queue.hpp>
+#include <plx/evaluator/Evaluator.hpp>
 #include <plx/literal/String.hpp>
 #include <plx/object/Globals.hpp>
 #include <plx/object/Object.hpp>
