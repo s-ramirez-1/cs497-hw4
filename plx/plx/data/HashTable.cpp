@@ -5,6 +5,7 @@
 #include <plx/data/HashTable.hpp>
 #include <plx/data/List.hpp>
 #include <plx/data/Triple.hpp>
+#include <plx/evaluator/Evaluator.hpp>
 #include <plx/object/Globals.hpp>
 #include <plx/object/HashCode.hpp>
 #include <plx/object/TypeIds.hpp>
@@ -14,10 +15,12 @@ namespace PLX {
     HashTable::HashTable() {}
 
     bool HashTable::boolValue() const {
+        // return _nBindings != 0;
         return _map.size() != 0;
     }
 
     int HashTable::count() const {
+        // return _nBindings;
         return _map.size();
     }
 

@@ -4,6 +4,7 @@
 #include <plx/data/Array.hpp>
 #include <plx/data/List.hpp>
 #include <plx/data/Queue.hpp>
+#include <plx/evaluator/Evaluator.hpp> 
 #include <plx/literal/Nil.hpp>
 #include <plx/literal/String.hpp>
 #include <plx/object/Globals.hpp>
@@ -21,6 +22,7 @@ namespace PLX {
     List::List(Object* first)
         : List(first, GLOBALS->EmptyList())
     {}
+
 
     List::List(Object* first, Object* rest)
         : _first {first}
@@ -45,8 +47,7 @@ namespace PLX {
     }
 
     bool List::boolValue() const {
-        // TODO
-        return false;
+        return this != GLOBALS->EmptyList();
     }
 
     bool List::equals(const Object* other) const {
@@ -100,8 +101,14 @@ namespace PLX {
     }
 
     int List::length() const {
-        // TODO
-        return -1;
+        if (isEmpty()) {
+            return 0;
+        }
+        if (_rest->isA(TypeId::D_LIST)) {
+            List* restList = static_cast<List*>(_rest);
+            return 1 + restList->length();
+        }
+        return 2;
     }
 
     bool List::length(int& len) {
@@ -112,7 +119,7 @@ namespace PLX {
     List* List::locate(Object* obj) {
         List* list = this;
         while (!list->isEmpty()) {
-            if (list->_first->equals(obj)) {
+            if (*(list->_first) == *obj) {
                 break;
             }
             if (list->_rest->isA(TypeId::D_LIST)) {
