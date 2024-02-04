@@ -53,6 +53,12 @@ namespace PLX {
         return thisPtr == otherPtr;
     }
 
+    Object* Object::eval(Evaluator* etor) {
+        (void)etor;
+        // by default an object evaluates to itself
+        return this;
+    }
+
     bool Object::hashCode(HashCode& hashCode) {
         (void)hashCode;
         Array* payload = new Array({this, this->typeSymbol()});

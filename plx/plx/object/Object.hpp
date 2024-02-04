@@ -27,6 +27,7 @@ namespace PLX {
         virtual bool boolValue() const;
         virtual void displayOn(std::ostream& ostream) const;
         virtual bool equals(const Object* other) const;
+        virtual Object* eval(Evaluator* etor);
         virtual bool hashCode(HashCode& hashCode);
         virtual bool index(Object* indexer, Object*& retrievedValue);
         virtual bool length(int& len);

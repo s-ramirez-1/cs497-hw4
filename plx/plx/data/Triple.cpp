@@ -2,6 +2,7 @@
 
 #include <plx/data/Array.hpp>
 #include <plx/data/Triple.hpp>
+#include <plx/evaluator/Evaluator.hpp>
 #include <plx/literal/Nil.hpp>
 #include <plx/literal/String.hpp>
 #include <plx/object/Globals.hpp>
