@@ -19,7 +19,6 @@ namespace PLX {
         EXPECT_EQ("Identifier", identifier1->typeName());
         Identifier* identifier2 = Identifier::create("Abc");
         // This asserts that both identifiers are the same object
-        std::cerr << "Identifier_Test " << (void*)identifier1 << ", " << (void*)identifier2 << "\n";
         ASSERT_EQ(identifier1, identifier2);
         HashCode hashCode1;
         EXPECT_TRUE(identifier1->hashCode(hashCode1));
@@ -35,19 +34,19 @@ namespace PLX {
         EXPECT_NE(hashCode2, hashCode3);
     }
 
-    TEST_F(Identifier_Test, Eval_Evaluator) {
+    TEST_F(Identifier_Test, Eval) {
         Evaluator* etor = new Evaluator();
         Identifier* abc = Identifier::create("abc");
         Integer* i100 = new Integer(100);
         etor->bind(abc, i100);
-        Object* value = etor->evalExpr(abc);
+        Object* value = abc->eval(etor);
         EXPECT_EQ(i100, value);
     }
 
     TEST_F(Identifier_Test, EvalUnbound) {
         Evaluator* etor = new Evaluator();
         Identifier* abc = Identifier::create("abc");
-        EXPECT_THROW(etor->evalExpr(abc), Array*);
+        EXPECT_THROW(abc->eval(etor), Array*);
     }
 
     TEST_F(Identifier_Test, ShowOn) {
