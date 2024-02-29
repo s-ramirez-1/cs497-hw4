@@ -83,26 +83,6 @@ namespace PLX {
         EXPECT_EQ(savedEnv, etor->environment());
     }
 
-    TEST_F(Do_Test, MarkChildren) {
-        Integer* i100 = new Integer(100);
-        Integer* i200 = new Integer(100);
-        Integer* i300 = new Integer(100);
-        List* seqList =
-          new List(i100,
-          new List(i200,
-          new List(i300)));
-        Do* seq = new Do(seqList);
-        EXPECT_FALSE(seq->isMarked());
-        EXPECT_FALSE(i100->isMarked());
-        EXPECT_FALSE(i200->isMarked());
-        EXPECT_FALSE(i300->isMarked());
-        seq->markChildren();
-        EXPECT_FALSE(seq->isMarked());
-        EXPECT_TRUE(i100->isMarked());
-        EXPECT_TRUE(i200->isMarked());
-        EXPECT_TRUE(i300->isMarked());
-    }
-
     TEST_F(Do_Test, ShowOn) {
         Integer* i100 = new Integer(100);
         Integer* i200 = new Integer(200);

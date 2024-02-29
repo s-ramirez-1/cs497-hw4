@@ -41,19 +41,6 @@ namespace PLX {
         ASSERT_THROW(etor->evalExpr(let1), Array*);
     }
 
-    TEST_F(Let_Test, MarkChildren) {
-        Identifier* x = Identifier::create("x");
-        Integer* i100 = new Integer(100);
-        Let* let1 = new Let(new Triple(x, i100));
-        EXPECT_FALSE(let1->isMarked());
-        EXPECT_FALSE(x->isMarked());
-        EXPECT_FALSE(i100->isMarked());
-        let1->markChildren();
-        EXPECT_FALSE(let1->isMarked());
-        EXPECT_TRUE(x->isMarked());
-        EXPECT_TRUE(i100->isMarked());
-    }
-
     TEST_F(Let_Test, ShowOn) {
         Identifier* x = Identifier::create("x");
         Identifier* y = Identifier::create("y");

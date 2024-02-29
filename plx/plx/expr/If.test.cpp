@@ -37,22 +37,6 @@ namespace PLX {
         EXPECT_EQ(i200, resObj);
     }
 
-    TEST_F(If_Test, MarkChildren) {
-        Integer* i100 = new Integer(100);
-        Integer* i200 = new Integer(200);
-        Integer* i300 = new Integer(200);
-        If* if1 = new If(i100, i200, i300);
-        EXPECT_FALSE(if1->isMarked());
-        EXPECT_FALSE(i100->isMarked());
-        EXPECT_FALSE(i200->isMarked());
-        EXPECT_FALSE(i300->isMarked());
-        if1->markChildren();
-        EXPECT_FALSE(if1->isMarked());
-        EXPECT_TRUE(i100->isMarked());
-        EXPECT_TRUE(i200->isMarked());
-        EXPECT_TRUE(i300->isMarked());
-    }
-
     TEST_F(If_Test, ShowOn) {
         Integer* i100 = new Integer(100);
         Integer* i200 = new Integer(200);

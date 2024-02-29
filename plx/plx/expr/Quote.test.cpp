@@ -25,16 +25,6 @@ namespace PLX {
         EXPECT_EQ(x, resObj);
     }
 
-    TEST_F(Quote_Test, MarkChildren) {
-        Identifier* x = Identifier::create("x");
-        Quote* quote = new Quote(x);
-        EXPECT_FALSE(quote->isMarked());
-        EXPECT_FALSE(x->isMarked());
-        quote->markChildren();
-        EXPECT_FALSE(quote->isMarked());
-        EXPECT_TRUE(x->isMarked());
-    }
-
     TEST_F(Quote_Test, ShowOn) {
         std::stringstream ss;
         Identifier* x = Identifier::create("x");

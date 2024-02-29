@@ -30,7 +30,7 @@ namespace PLX {
     }
 
     Identifier::Identifier(const std::string& name)
-        : Symbolic(name)
+        : Symbolic(name, TypeId::E_IDENTIFIER)
     {}
 
     Object* Identifier::eval(Evaluator* etor) {
