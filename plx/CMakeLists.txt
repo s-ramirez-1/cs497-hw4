@@ -52,7 +52,12 @@ set(LIB_SRC_FILES
     plx/data/Queue.cpp
     plx/data/Triple.cpp
     plx/evaluator/Evaluator.cpp
+    plx/expr/Do.cpp
     plx/expr/Identifier.cpp
+    plx/expr/If.cpp
+    plx/expr/Let.cpp
+    plx/expr/LetIn.cpp
+    plx/expr/Quote.cpp
     plx/literal/Boolean.cpp
     plx/literal/Integer.cpp
     plx/literal/Nil.cpp
@@ -73,7 +78,12 @@ set(TEST_SRC_FILES
     plx/data/Queue.test.cpp
     plx/data/Triple.test.cpp
     plx/evaluator/Evaluator.test.cpp
+    plx/expr/Do.test.cpp
     plx/expr/Identifier.test.cpp
+    plx/expr/If.test.cpp
+    plx/expr/Let.test.cpp
+    plx/expr/LetIn.test.cpp
+    plx/expr/Quote.test.cpp
     plx/literal/Boolean.test.cpp
     plx/literal/Integer.test.cpp
     plx/literal/Nil.test.cpp

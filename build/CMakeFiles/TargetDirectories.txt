@@ -1,0 +1,5 @@
+/home/shamarah/hw4/wsu-cs497/build/CMakeFiles/plx_lib.dir
+/home/shamarah/hw4/wsu-cs497/build/CMakeFiles/plx.dir
+/home/shamarah/hw4/wsu-cs497/build/CMakeFiles/plx-test.dir
+/home/shamarah/hw4/wsu-cs497/build/CMakeFiles/edit_cache.dir
+/home/shamarah/hw4/wsu-cs497/build/CMakeFiles/rebuild_cache.dir
